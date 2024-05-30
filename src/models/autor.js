@@ -1,7 +1,7 @@
 /* eslint-disable class-methods-use-this */
 /* eslint-disable camelcase */
-import knex from "knex";
 import db from "../db/dbconfig.js";
+import knex from "knex";
 
 class Autor {
   constructor({ id, nome, nacionalidade, created_at, updated_at }) {
