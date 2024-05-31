@@ -85,13 +85,13 @@ class AutoresController {
 
       if (!autor) throw new Error("Autor Não encontrado");
 
-      const listarLivros = await Autor.pegaLivrosPorAutor(params.id);
+      let listarLivros = await Autor.pegaLivrosPorAutor(params.id);
 
       if (!listarLivros) listarLivros = { livros: "Livros não encontrados" };
 
       return res.status(200).json({ autor, livros: listarLivros });
     } catch (err) {
-      console.log(err);
+      return res.status(500).json({ error: "Erro ao buscar autor e livros" });
     }
   };
 }
