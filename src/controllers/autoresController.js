@@ -91,7 +91,7 @@ class AutoresController {
 
       return res.status(200).json({ autor, livros: listarLivros });
     } catch (err) {
-      console.log(err);
+      return res.status(500).json({ error: err.message });
     }
   };
 }
