@@ -1,6 +1,8 @@
 import Evento from "../models/evento.js";
 
 class EventosController {
+  static async liberaAcessoEventos() {}
+
   static async listarEventos(req, res) {
     try {
       const resultado = await Evento.pegarEventos();
